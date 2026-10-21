@@ -9,6 +9,968 @@
       name="description"
       content="JS Gastrobar, gastrobar na subida do Taquari no Grande Colorado: sabor, brinde e encontros para ficar na memória."
     />
+     <link rel="icon" type="image/png" href="logo-js-gastrobar.png" />
+    <link rel="apple-touch-icon" href="logo-js-gastrobar.png" />
+    <meta
+      name="keywords"
+      content="JS Gastrobar, gastrobar Grande Colorado, Taquari Grande Colorado, restaurante Grande Colorado, bar no Grande Colorado"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="JS Gastrobar" />
+    <meta property="og:title" content="JS Gastrobar | Gastrobar no Grande Colorado" />
+    <meta
+      property="og:description"
+      content="Sabor, brinde e encontros na subida do Taquari, no Grande Colorado."
+    />
+    <meta
+      property="og:image"
+      content="https://files.manuscdn.com/user_upload_by_module/session_file/310519664019103316/rJWuROBahfMrLbAt.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="JS Gastrobar | Gastrobar no Grande Colorado" />
+    <meta
+      name="twitter:description"
+      content="Sabor, brinde e encontros na subida do Taquari, no Grande Colorado."
+    />
+    <meta
+      name="twitter:image"
+      content="https://files.manuscdn.com/user_upload_by_module/session_file/310519664019103316/rJWuROBahfMrLbAt.png"
+    />
+    <title>JS Gastrobar | Gastrobar no Grande Colorado</title>
+    <link rel="icon" href="logo-js-gastrobar.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+:root {
+  --ink: #120d0c;
+  --ink-soft: #211918;
+  --paper: #f3eadb;
+  --paper-deep: #e8dcc8;
+  --red: #bd261b;
+  --red-dark: #71140f;
+  --gold: #e8b643;
+  --gold-pale: #f8d77a;
+  --line: rgba(243, 234, 219, 0.19);
+  --body-font: "DM Sans", Arial, sans-serif;
+  --display-font: "Bebas Neue", Impact, sans-serif;
+  --max: 1240px;
+  scroll-behavior: smooth;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--ink); }
+
+body {
+  margin: 0;
+  color: var(--paper);
+  background: var(--ink);
+  font-family: var(--body-font);
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+a { color: inherit; }
+button { font: inherit; }
+
+::selection { color: var(--ink); background: var(--gold); }
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: -4rem;
+  left: 1rem;
+  padding: .75rem 1rem;
+  color: var(--ink);
+  background: var(--gold);
+  font-weight: 700;
+  text-decoration: none;
+  transition: top .2s ease;
+}
+.skip-link:focus { top: 1rem; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.site-header {
+  position: absolute;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 82px;
+  padding: 0 4.5vw;
+  border-bottom: 1px solid rgba(243, 234, 219, .15);
+}
+
+.brand-lockup {
+  display: inline-flex;
+  gap: .6rem;
+  align-items: center;
+  color: var(--paper);
+  font-size: .77rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.brand-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background: var(--red);
+  box-shadow: 0 0 0 5px rgba(189, 38, 27, .18);
+  transform: rotate(45deg);
+}
+
+.site-nav { display: flex; gap: clamp(1rem, 2.4vw, 2.4rem); }
+.site-nav a, .header-action {
+  position: relative;
+  color: rgba(243, 234, 219, .82);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.site-nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: -.45rem;
+  left: 0;
+  height: 1px;
+  background: var(--gold);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s ease;
+}
+.site-nav a:hover::after, .site-nav a:focus-visible::after { transform: scaleX(1); }
+.header-action { color: var(--gold-pale); }
+.header-action span { margin-left: .3rem; color: var(--red); font-size: 1rem; }
+.menu-toggle { display: none; }
+.is-disabled { cursor: not-allowed; opacity: .66; }
+
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
+  align-items: center;
+  min-height: min(860px, 100vh);
+  padding: 9.5rem 8vw 5rem 12vw;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.hero::before {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background:
+    radial-gradient(circle at 77% 46%, rgba(189, 38, 27, .42) 0, rgba(189, 38, 27, 0) 25rem),
+    linear-gradient(112deg, #120d0c 0%, #120d0c 53%, #1b0d0b 53%, #1b0d0b 100%);
+  content: "";
+}
+
+.hero-texture {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: .46;
+  background-image: linear-gradient(115deg, transparent 0 47%, rgba(232, 182, 67, .09) 47.1%, transparent 47.25%), repeating-linear-gradient(-42deg, transparent 0 5px, rgba(255, 255, 255, .018) 5px 6px);
+  mask-image: linear-gradient(90deg, #000 0 52%, transparent 86%);
+}
+
+.hero-rail {
+  position: absolute;
+  top: 82px;
+  bottom: 0;
+  left: 4.4vw;
+  display: flex;
+  width: 1px;
+  justify-content: center;
+  background: rgba(243, 234, 219, .16);
+}
+.hero-rail span {
+  position: absolute;
+  top: 8.5rem;
+  color: rgba(243, 234, 219, .38);
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+}
+
+.hero-copy { position: relative; z-index: 1; max-width: 710px; }
+.eyebrow, .contact-overline {
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+  margin: 0 0 1.2rem;
+  color: var(--gold-pale);
+  font-size: .73rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.pulse {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 100%;
+  background: var(--red);
+  box-shadow: 0 0 0 4px rgba(189, 38, 27, .16);
+}
+
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { text-wrap: balance; }
+h1, h2 { font-family: var(--display-font); font-weight: 400; letter-spacing: .01em; line-height: .92; text-transform: uppercase; }
+h1 {
+  max-width: 760px;
+  margin-bottom: 1.6rem;
+  font-size: clamp(4.6rem, 8.4vw, 8.9rem);
+}
+h1 em, h2 em { color: var(--gold); font-style: normal; }
+.hero-intro {
+  max-width: 520px;
+  margin-bottom: 2rem;
+  color: rgba(243, 234, 219, .77);
+  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  line-height: 1.65;
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; }
+.button {
+  display: inline-flex;
+  min-height: 53px;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: .8rem 1.15rem;
+  border: 1px solid transparent;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform .25s ease, background .25s ease, color .25s ease;
+}
+.button:hover, .button:focus-visible { transform: translateY(-3px); }
+.button-primary { color: var(--ink); background: var(--gold); }
+.button-primary:hover, .button-primary:focus-visible { background: var(--gold-pale); }
+.button-ghost { border-color: rgba(243, 234, 219, .4); color: var(--paper); }
+.button-ghost:hover, .button-ghost:focus-visible { border-color: var(--gold); color: var(--gold); }
+.button-cream { color: var(--ink); background: var(--paper); }
+.button-cream:hover, .button-cream:focus-visible { color: var(--ink); background: var(--gold); }
+
+.hero-footnote {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 3.2rem;
+  color: rgba(243, 234, 219, .56);
+  font-size: .76rem;
+}
+.hero-footnote p { max-width: 300px; margin: 0; }
+.footnote-mark {
+  color: var(--gold);
+  font-family: var(--display-font);
+  font-size: 2.1rem;
+  letter-spacing: .04em;
+}
+
+.hero-mark {
+  position: relative;
+  display: flex;
+  min-height: 500px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.mark-glow {
+  position: absolute;
+  width: min(38vw, 510px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(232, 182, 67, .32);
+  border-radius: 100%;
+  box-shadow: 0 0 0 2.8rem rgba(189, 38, 27, .08), 0 0 9rem rgba(189, 38, 27, .32);
+  transform: rotate(-12deg);
+}
+.mark-glow::before, .mark-glow::after {
+  position: absolute;
+  inset: 9%;
+  border: 1px dashed rgba(232, 182, 67, .36);
+  border-radius: inherit;
+  content: "";
+}
+.mark-glow::after { inset: 20%; border-style: solid; border-color: rgba(243, 234, 219, .16); }
+.logo-frame {
+  position: relative;
+  z-index: 1;
+  width: min(32vw, 370px);
+  padding: .8rem;
+  background: linear-gradient(135deg, var(--gold), var(--red));
+  clip-path: polygon(50% 0, 97% 20%, 88% 83%, 50% 100%, 12% 83%, 3% 20%);
+  filter: drop-shadow(0 1.2rem 1.8rem rgba(0, 0, 0, .44));
+}
+.logo-frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  clip-path: polygon(50% 0, 97% 20%, 88% 83%, 50% 100%, 12% 83%, 3% 20%);
+}
+.logo-caption {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+  margin-top: 1.55rem;
+  color: var(--paper);
+  font-family: var(--display-font);
+  font-size: 1.45rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.logo-caption i { width: 28px; height: 1px; background: var(--gold); }
+.hero-mark-note {
+  position: relative;
+  z-index: 1;
+  margin: .3rem 0 0;
+  color: rgba(243, 234, 219, .56);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+.hero-scroll {
+  position: absolute;
+  right: 3rem;
+  bottom: 2.1rem;
+  display: flex;
+  gap: .7rem;
+  align-items: center;
+  color: rgba(243, 234, 219, .44);
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.hero-scroll i { width: 39px; height: 1px; background: var(--gold); }
+
+.section-shell { width: min(var(--max), 100% - 10vw); margin: 0 auto; }
+.experience {
+  padding: 7.5rem 0 6.5rem;
+  color: var(--ink);
+  background: var(--paper);
+  box-shadow: 0 0 0 100vmax var(--paper);
+  clip-path: inset(0 -100vmax);
+}
+.section-kicker { display: flex; gap: .65rem; align-items: center; color: var(--red); }
+.section-kicker span { font-family: var(--display-font); font-size: 1.25rem; letter-spacing: .08em; }
+.section-kicker p { margin: 0; font-size: .7rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+.experience-heading { display: grid; grid-template-columns: 1.3fr .7fr; gap: clamp(2rem, 7vw, 7rem); align-items: end; margin: 1.4rem 0 3.4rem; }
+.experience-heading h2, .house h2, .menu-heading h2, .proof-content h2, .location-copy h2, .contact-banner h2 { margin-bottom: 0; font-size: clamp(3.2rem, 6.3vw, 6.5rem); }
+.experience-heading h2 { max-width: 840px; }
+.experience-heading p { max-width: 410px; margin-bottom: .5rem; color: #594a43; }
+.experience-band { display: grid; grid-template-columns: 1.1fr .9fr .9fr; min-height: 295px; }
+.value-note { position: relative; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem; overflow: hidden; }
+.value-note::before { position: absolute; top: 1.4rem; right: 1.4rem; left: 1.4rem; border-top: 1px solid currentColor; content: ""; opacity: .35; }
+.value-note h3 { position: relative; max-width: 260px; margin-bottom: .55rem; font-family: var(--display-font); font-size: 2rem; font-weight: 400; letter-spacing: .03em; line-height: .95; text-transform: uppercase; }
+.value-note p { position: relative; max-width: 320px; margin: 0; font-size: .87rem; line-height: 1.55; }
+.value-note-red { color: var(--paper); background: var(--red); }
+.value-note-red::after { position: absolute; right: -1rem; bottom: -3rem; color: rgba(255, 255, 255, .11); font-family: var(--display-font); font-size: 12rem; content: "J"; }
+.value-note-dark { color: var(--paper); background: var(--ink-soft); }
+.value-note-dark::after { position: absolute; right: -1rem; bottom: -3rem; color: rgba(232, 182, 67, .09); font-family: var(--display-font); font-size: 12rem; content: "T"; }
+.value-note-gold { color: var(--ink); background: var(--gold); }
+.value-note-gold::after { position: absolute; right: -1rem; bottom: -3rem; color: rgba(18, 13, 12, .1); font-family: var(--display-font); font-size: 12rem; content: "S"; }
+
+.house { padding: 6.5rem 0 8rem; }
+.house-topline { display: flex; justify-content: space-between; gap: 2rem; align-items: center; }
+.house-sidecopy { max-width: 300px; margin: 0; color: rgba(243, 234, 219, .57); font-size: .82rem; }
+.house h2 { max-width: 770px; margin: 1.3rem 0 3.2rem; }
+.photo-wall { display: grid; grid-template-columns: 1.4fr .78fr .82fr; grid-template-rows: 310px 250px; gap: 12px; }
+.photo-slot { position: relative; min-height: 0; margin: 0; overflow: hidden; background: #1b1514; }
+.photo-slot::after { position: absolute; z-index: 0; inset: 0; background: linear-gradient(180deg, transparent 30%, rgba(18,13,12,.7) 100%); content: ""; pointer-events: none; }
+.photo-slot-wide { grid-row: span 2; }
+.photo-slot-tall { grid-row: span 2; }
+.photo-slot-square { grid-column: 3; }
+.photo-slot-note { grid-column: 3; }
+.photo-placeholder { position: relative; z-index: 1; display: flex; height: 100%; flex-direction: column; justify-content: flex-end; padding: 1.6rem; background: radial-gradient(circle at 76% 15%, rgba(189, 38, 27, .45), transparent 34%), linear-gradient(135deg, rgba(232, 182, 67, .18), transparent 45%), #241a18; }
+.photo-slot-wide .photo-placeholder { background: radial-gradient(circle at 70% 24%, rgba(232, 182, 67, .34), transparent 20%), linear-gradient(130deg, rgba(189, 38, 27, .78), rgba(18, 13, 12, .52) 70%), #241a18; }
+.photo-slot-tall .photo-placeholder { background: radial-gradient(circle at 50% 24%, rgba(232, 182, 67, .34), transparent 18%), linear-gradient(165deg, rgba(18, 13, 12, .18), rgba(189, 38, 27, .77)), #211918; }
+.photo-placeholder span { margin-bottom: auto; color: var(--gold-pale); font-size: .68rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+.photo-placeholder strong { max-width: 310px; font-family: var(--display-font); font-size: clamp(1.7rem, 2.4vw, 2.65rem); font-weight: 400; letter-spacing: .025em; line-height: .96; text-transform: uppercase; }
+.photo-placeholder small { max-width: 280px; margin-top: .7rem; color: rgba(243, 234, 219, .63); font-size: .69rem; line-height: 1.45; }
+.photo-placeholder-logo { align-items: flex-start; justify-content: center; background: var(--gold); color: var(--ink); }
+.photo-placeholder-logo img { width: 74px; height: 74px; margin-bottom: 1rem; object-fit: cover; mix-blend-mode: multiply; }
+.photo-placeholder-logo strong { color: var(--ink); font-size: 1.65rem; }
+.photo-placeholder-logo small { color: rgba(18, 13, 12, .73); }
+
+.photo-image { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 58%; transition: transform .6s ease, filter .6s ease; }
+.photo-slot:hover .photo-image { transform: scale(1.04); filter: saturate(1.08); }
+.photo-caption { position: absolute; z-index: 1; right: 0; bottom: 0; left: 0; display: flex; flex-direction: column; padding: 1.6rem; color: var(--paper); }
+.photo-caption span { margin-bottom: .55rem; color: var(--gold-pale); font-size: .68rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+.photo-caption strong { max-width: 310px; font-family: var(--display-font); font-size: clamp(1.7rem, 2.4vw, 2.65rem); font-weight: 400; letter-spacing: .025em; line-height: .96; text-transform: uppercase; }
+.photo-caption small { max-width: 280px; margin-top: .7rem; color: rgba(243, 234, 219, .72); font-size: .69rem; line-height: 1.45; }
+.menu-section { position: relative; color: var(--paper); background: var(--red); overflow: hidden; }
+.menu-section::before { position: absolute; inset: 0; background: repeating-linear-gradient(-40deg, transparent 0 9px, rgba(0,0,0,.04) 9px 10px); content: ""; }
+.menu-panel { position: relative; padding: 7rem 0; }
+.section-kicker-light { color: var(--gold-pale); }
+.menu-heading { display: grid; grid-template-columns: 1.2fr .8fr; gap: clamp(2rem, 8vw, 8rem); margin: 1.2rem 0 3.5rem; }
+.menu-heading h2 { max-width: 720px; }
+.menu-heading p { max-width: 410px; align-self: end; margin-bottom: .5rem; color: rgba(243, 234, 219, .78); }
+.menu-showcase { display: grid; grid-template-columns: 1.15fr .85fr .85fr; gap: 1px; border: 1px solid rgba(243, 234, 219, .32); background: rgba(243, 234, 219, .32); }
+.dish-card { position: relative; min-height: 315px; padding: 2rem; background: #8a1c14; overflow: hidden; }
+.dish-card::after { position: absolute; right: -1rem; bottom: -5rem; color: rgba(0,0,0,.08); font-family: var(--display-font); font-size: 17rem; content: "★"; transform: rotate(16deg); }
+.dish-card-featured { background: var(--ink); }
+.dish-card-accent { color: var(--ink); background: var(--gold); }
+.dish-card-accent::after { color: rgba(18,13,12,.08); }
+.dish-type { position: relative; z-index: 1; margin-bottom: 4.1rem; font-size: .66rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+.dish-card h3 { position: relative; z-index: 1; margin-bottom: .8rem; font-family: var(--display-font); font-size: 2.4rem; font-weight: 400; letter-spacing: .03em; line-height: .95; text-transform: uppercase; }
+.dish-card > p:not(.dish-type) { position: relative; z-index: 1; max-width: 300px; margin-bottom: 1.1rem; font-size: .85rem; }
+.dish-rule { position: relative; z-index: 1; display: block; width: 38px; height: 2px; margin-bottom: .65rem; background: currentColor; }
+.dish-card small { position: relative; z-index: 1; font-size: .64rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; opacity: .65; }
+
+.social-proof {
+  display: grid;
+  grid-template-columns: .75fr 1.25fr;
+  gap: clamp(3rem, 10vw, 10rem);
+  align-items: center;
+  padding: 7.5rem 0;
+  color: var(--ink);
+  background: var(--paper);
+  box-shadow: 0 0 0 100vmax var(--paper);
+  clip-path: inset(0 -100vmax);
+}
+.proof-stamp { display: flex; width: min(28vw, 320px); aspect-ratio: 1; flex-direction: column; align-items: center; justify-content: center; margin-left: max(0px, 3vw); border: 1px solid var(--red); border-radius: 100%; color: var(--red); transform: rotate(-8deg); }
+.proof-stamp::before { position: absolute; inset: 11px; border: 1px solid var(--red); border-radius: 100%; content: ""; }
+.proof-stamp span { position: relative; z-index: 1; font-size: .63rem; font-weight: 700; letter-spacing: .2em; }
+.proof-stamp strong { position: relative; z-index: 1; margin: .35rem 0; font-family: var(--display-font); font-size: clamp(4rem, 7vw, 7rem); font-weight: 400; line-height: .75; }
+.proof-content h2 { max-width: 780px; margin: 1.3rem 0 1.3rem; }
+.proof-content > p { max-width: 560px; color: #594a43; }
+.quote-placeholder { display: flex; gap: 1rem; align-items: flex-start; max-width: 620px; margin-top: 2rem; padding: 1.2rem 0; border-top: 1px solid rgba(18,13,12,.22); border-bottom: 1px solid rgba(18,13,12,.22); }
+.quote-mark { color: var(--red); font-family: Georgia, serif; font-size: 4.8rem; line-height: .7; }
+.quote-placeholder p { margin: 0; color: #6c5e57; font-size: .9rem; font-style: italic; }
+.review-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; max-width: 780px; margin-top: 2rem; }
+.review-card { display: flex; min-height: 190px; flex-direction: column; padding: 1.25rem; border: 1px solid rgba(18,13,12,.2); background: rgba(255,255,255,.38); }
+.review-card-google { border-top: 3px solid var(--red); }
+.review-card-suggested { border-top: 3px solid var(--gold); }
+.review-stars { margin-bottom: .8rem; color: var(--red); font-size: .78rem; letter-spacing: .12em; }
+.review-card blockquote { flex: 1; margin: 0 0 1rem; color: #594a43; font-size: .88rem; font-style: italic; line-height: 1.5; }
+.review-card cite { color: #6c5e57; font-size: .67rem; font-style: normal; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.review-source { display: block; margin-top: .35rem; color: #8b766c; font-size: .62rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+@media (max-width: 720px) { .review-grid { grid-template-columns: 1fr; } }
+
+.location { display: grid; grid-template-columns: 1fr 1fr; min-height: 620px; color: var(--paper); }
+.location-map { position: relative; min-height: 100%; overflow: hidden; background: #2a1b18; }
+.map-grid { position: absolute; inset: -20%; opacity: .54; background-image: linear-gradient(rgba(232, 182, 67, .18) 1px, transparent 1px), linear-gradient(90deg, rgba(232, 182, 67, .18) 1px, transparent 1px); background-size: 50px 50px; transform: rotate(-15deg); }
+.route { position: absolute; z-index: 1; border: 9px solid var(--red); border-radius: 100%; filter: drop-shadow(0 0 13px rgba(189,38,27,.36)); }
+.route-one { top: 8%; left: -18%; width: 103%; height: 105%; border-right-color: transparent; border-bottom-color: transparent; transform: rotate(-20deg); }
+.route-two { right: -35%; bottom: -31%; width: 105%; height: 95%; border-color: var(--gold); border-top-color: transparent; border-left-color: transparent; transform: rotate(-20deg); }
+.map-pin { position: absolute; z-index: 3; top: 49%; left: 54%; display: flex; width: 88px; aspect-ratio: 1; align-items: center; justify-content: center; border: 1px solid var(--gold); border-radius: 50% 50% 50% 0; color: var(--ink); background: var(--gold); box-shadow: 0 0 0 14px rgba(232,182,67,.13); transform: rotate(-45deg); }
+.map-pin span { position: absolute; inset: 9px; border: 1px solid var(--ink); border-radius: inherit; }
+.map-pin b { font-family: var(--display-font); font-size: 1.7rem; letter-spacing: .07em; transform: rotate(45deg); }
+.map-label { position: absolute; z-index: 2; margin: 0; color: rgba(243,234,219,.75); font-size: .67rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.map-label-top { top: 17%; left: 15%; }
+.map-label-bottom { right: 11%; bottom: 18%; }
+.map-disclaimer { position: absolute; z-index: 2; right: 1rem; bottom: 1rem; left: 1rem; margin: 0; color: rgba(243,234,219,.7); font-size: .61rem; font-weight: 700; letter-spacing: .08em; text-align: center; text-transform: uppercase; }
+.location-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 6rem clamp(2rem, 8vw, 8rem); background: var(--ink); }
+.location-copy h2 { margin: 1.3rem 0; }
+.location-copy > p { max-width: 450px; color: rgba(243,234,219,.71); }
+.text-link { display: inline-flex; gap: .45rem; align-items: center; margin-top: .9rem; color: var(--gold); font-size: .74rem; font-weight: 700; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+.text-link:hover, .text-link:focus-visible { color: var(--gold-pale); }
+.location-copy small { margin-top: .6rem; color: rgba(243,234,219,.68); font-size: .68rem; }
+
+.contact { display: grid; grid-template-columns: 1.15fr .85fr; padding: 7.5rem 0; color: var(--ink); }
+.contact-banner { position: relative; padding: clamp(2.5rem, 5vw, 5rem); overflow: hidden; background: var(--gold); }
+.contact-banner::before { position: absolute; right: -4rem; bottom: -9rem; color: rgba(18,13,12,.1); font-family: var(--display-font); font-size: 20rem; content: "JS"; line-height: .8; }
+.contact-banner > * { position: relative; }
+.contact-overline { color: var(--red-dark); }
+.contact-banner h2 { max-width: 620px; margin: .3rem 0 1.4rem; }
+.contact-banner h2 em { color: var(--red); }
+.contact-intro { max-width: 485px; margin-bottom: 1.8rem; color: #4a3125; }
+.contact-helper { max-width: 450px; margin: 1rem 0 0; color: rgba(18,13,12,.68); font-size: .7rem; }
+.contact-details { display: flex; flex-direction: column; justify-content: center; padding: clamp(1.7rem, 4vw, 4rem); background: var(--paper-deep); }
+.contact-row { display: grid; grid-template-columns: 100px 1fr; gap: .8rem; padding: 1.1rem 0; border-bottom: 1px solid rgba(18,13,12,.17); }
+.contact-row:last-child { border-bottom: 0; }
+.contact-row span { color: var(--red); font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.contact-row strong { font-size: .9rem; font-weight: 600; }
+.contact-row a { color: inherit; text-decoration: none; }
+.contact-row a:hover, .contact-row a:focus-visible { color: var(--red); text-decoration: underline; }
+.contact-row strong small { display: inline-block; margin-top: .35rem; color: #6c5e57; font-size: .7rem; font-weight: 500; }
+
+.site-footer { display: grid; grid-template-columns: 1.1fr .8fr 1.1fr; gap: 2rem; align-items: center; min-height: 180px; padding: 2rem 5vw; border-top: 1px solid var(--line); }
+.footer-brand { display: flex; gap: .85rem; align-items: center; }
+.footer-brand img { width: 50px; height: 50px; object-fit: cover; border-radius: 50%; }
+.footer-brand p { margin: 0; color: rgba(243,234,219,.7); font-size: .7rem; line-height: 1.55; }
+.footer-nav { display: flex; gap: 1.1rem; justify-content: center; }
+.footer-nav a { color: rgba(243,234,219,.69); font-size: .65rem; font-weight: 700; letter-spacing: .09em; text-decoration: none; text-transform: uppercase; }
+.footer-nav a:hover, .footer-nav a:focus-visible { color: var(--gold); }
+.footer-note { margin: 0; color: rgba(243,234,219,.68); font-size: .65rem; text-align: right; }
+
+@media (max-width: 900px) {
+  .site-header { padding: 0 5vw; }
+  .site-nav { gap: 1rem; }
+  .site-nav a { font-size: .64rem; }
+  .hero { grid-template-columns: 1.05fr .95fr; padding: 9rem 7vw 5rem 12vw; }
+  .hero-mark { min-height: 390px; }
+  .logo-frame { width: min(35vw, 280px); }
+  .experience-band { grid-template-columns: 1fr 1fr; }
+  .value-note-red { grid-row: span 2; }
+  .photo-wall { grid-template-columns: 1.2fr .8fr; grid-template-rows: 260px 230px 210px; }
+  .photo-slot-wide { grid-row: span 2; }
+  .photo-slot-tall { grid-row: auto; }
+  .photo-slot-square { grid-column: 2; }
+  .photo-slot-note { grid-column: 1 / -1; }
+  .menu-showcase { grid-template-columns: 1fr 1fr; }
+  .dish-card-featured { grid-row: span 2; }
+  .location-copy { padding: 4rem; }
+  .contact { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .site-header { min-height: 68px; }
+  .brand-lockup { font-size: .66rem; }
+  .menu-toggle { position: relative; z-index: 33; display: grid; width: 44px; height: 44px; place-content: center; gap: 6px; padding: 0; border: 0; color: var(--paper); background: transparent; cursor: pointer; }
+  .menu-toggle span:not(.sr-only) { display: block; width: 24px; height: 1px; background: currentColor; transition: transform .25s ease; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) { transform: translateY(3.5px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-3.5px) rotate(-45deg); }
+  .site-nav { position: absolute; top: 0; right: 0; left: 0; display: flex; min-height: 100vh; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; padding: 5rem 2rem; background: rgba(18,13,12,.98); opacity: 0; pointer-events: none; transform: translateY(-1rem); transition: opacity .25s ease, transform .25s ease; visibility: hidden; }
+  .site-nav.is-open { opacity: 1; pointer-events: auto; transform: translateY(0); visibility: visible; }
+  .site-nav a { font-family: var(--display-font); font-size: 2.5rem; font-weight: 400; letter-spacing: .04em; }
+  .header-action { display: none; }
+  .hero { display: flex; min-height: auto; flex-direction: column; align-items: stretch; padding: 8.4rem 7vw 2.5rem 13vw; }
+  .hero-rail { top: 68px; left: 6vw; }
+  .hero-rail span { top: 6rem; font-size: .52rem; }
+  h1 { font-size: clamp(4rem, 18.5vw, 6.4rem); }
+  .hero-intro { max-width: 460px; font-size: .98rem; }
+  .hero-mark { min-height: 0; margin: 2.1rem 0 .1rem; padding: 2rem 0; }
+  .mark-glow { width: min(75vw, 350px); }
+  .logo-frame { width: min(67vw, 290px); }
+  .hero-scroll { display: none; }
+  .section-shell { width: min(100% - 11vw, var(--max)); }
+  .experience { padding: 5rem 0; }
+  .experience-heading, .menu-heading { display: block; margin-bottom: 2.4rem; }
+  .experience-heading h2, .menu-heading h2 { margin-bottom: 1.4rem; }
+  .experience-heading p { margin-bottom: 0; }
+  .experience-band { display: block; }
+  .value-note { min-height: 235px; }
+  .house { padding: 5rem 0 5.5rem; }
+  .house-topline { display: block; }
+  .house-sidecopy { margin-top: 1rem; }
+  .house h2 { margin: 1.2rem 0 2.2rem; }
+  .photo-wall { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 260px 230px 220px; gap: 8px; }
+  .photo-slot-wide { grid-row: auto; grid-column: 1 / -1; }
+  .photo-slot-tall { grid-row: auto; grid-column: auto; }
+  .photo-slot-square { grid-column: auto; }
+  .photo-slot-note { grid-column: 1 / -1; }
+  .menu-panel { padding: 5rem 0; }
+  .menu-showcase { display: block; }
+  .dish-card { min-height: 255px; }
+  .dish-card-featured { min-height: 305px; }
+  .dish-type { margin-bottom: 2.9rem; }
+  .social-proof { display: block; padding: 5rem 0; }
+  .proof-stamp { width: min(55vw, 240px); margin: 0 0 2.5rem; }
+  .proof-content h2 { margin-top: 1.2rem; }
+  .location { display: flex; min-height: auto; flex-direction: column; width: 100%; }
+  .location-map { min-height: 370px; }
+  .location-copy { width: 100%; padding: 4.5rem 5.5vw; }
+  .contact { width: 100%; padding: 5rem 0; }
+  .contact-banner, .contact-details { padding: 2.2rem 5.5vw; }
+  .contact-row { grid-template-columns: 1fr; gap: .25rem; }
+  .site-footer { display: flex; min-height: 0; flex-direction: column; align-items: flex-start; padding: 2.5rem 5.5vw; }
+  .footer-nav { flex-wrap: wrap; justify-content: flex-start; }
+  .footer-note { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
+
+</style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "JS Gastrobar",
+        "description": "Gastrobar na subida do Taquari, no Grande Colorado.",
+        "image": "https://files.manuscdn.com/user_upload_by_module/session_file/310519664019103316/rJWuROBahfMrLbAt.png"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+    <header class="site-header" data-header>
+      <a class="brand-lockup" href="#inicio" aria-label="Voltar ao início do JS Gastrobar">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>JS Gastrobar</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navegacao" data-menu-toggle>
+        <span class="sr-only" data-menu-label>Abrir menu</span>
+        <span></span><span></span>
+      </button>
+
+      <nav id="navegacao" class="site-nav" aria-label="Navegação principal" data-nav>
+        <a href="#experiencia">A experiência</a>
+        <a href="#galeria">A casa</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="#encontre">Como chegar</a>
+      </nav>
+
+      <a class="header-action" href="#contato">Falar com a casa <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="conteudo">
+      <section id="inicio" class="hero" aria-labelledby="hero-title">
+        <div class="hero-texture" aria-hidden="true"></div>
+        <div class="hero-rail" aria-hidden="true"><span>GASTRO BAR • GRANDE COLORADO • JS</span></div>
+
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="pulse"></span> Na subida do Taquari • Grande Colorado</p>
+          <h1 id="hero-title">A mesa está posta.<br /><em>O brinde é por sua conta.</em></h1>
+          <p class="hero-intro">
+            Na subida do Taquari, no Grande Colorado, o JS Gastrobar reúne a identidade de um gastrobar em uma página feita para você encontrar a casa com facilidade.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contato">Quero falar com o JS <span aria-hidden="true">→</span></a>
+            <a class="button button-ghost" href="#experiencia">Conhecer a casa</a>
+          </div>
+          <div class="hero-footnote">
+            <span class="footnote-mark">JS</span>
+            <p>Gastrobar na subida do Taquari, no Grande Colorado.</p>
+          </div>
+        </div>
+
+        <div class="hero-mark" aria-label="Logo JS Gastrobar">
+          <div class="mark-glow" aria-hidden="true"></div>
+          <div class="logo-frame">
+            <img
+              src="logo-js-gastrobar.png"
+              alt="Logo do JS Gastrobar"
+            />
+          </div>
+          <div class="logo-caption"><span>JS</span><i></i><span>Gastrobar</span></div>
+          <p class="hero-mark-note">Sabor • brinde • encontro</p>
+        </div>
+
+        <div class="hero-scroll" aria-hidden="true"><span>Role para sentir o clima</span><i></i></div>
+      </section>
+
+      <section id="experiencia" class="experience section-shell" aria-labelledby="experience-title">
+        <div class="section-kicker"><span>JS</span><p>Do seu jeito, na nossa mesa</p></div>
+        <div class="experience-heading">
+          <h2 id="experience-title">Não é só sair para comer.<br /><em>É escolher onde a noite acontece.</em></h2>
+          <p>
+            JS Gastrobar está na rota de quem procura um gastrobar no Grande Colorado. Os diferenciais oficiais da casa entram aqui assim que forem compartilhados.
+          </p>
+        </div>
+
+        <div class="experience-band">
+          <article class="value-note value-note-red">
+            <h3>JS Gastrobar</h3>
+            <p>Nome, logo e presença digital em uma página que nasce com a identidade da casa.</p>
+          </article>
+          <article class="value-note value-note-dark">
+            <h3>Gastrobar</h3>
+            <p>Fotos, especialidades e informações reais vão completar a apresentação oficial do JS.</p>
+          </article>
+          <article class="value-note value-note-gold">
+            <h3>Grande Colorado</h3>
+            <p>Uma referência local já presente na estrutura de busca e descoberta da página.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="galeria" class="house section-shell" aria-labelledby="house-title">
+        <div class="house-topline">
+          <div class="section-kicker"><span>Casa</span><p>O que se vive aqui</p></div>
+          <p class="house-sidecopy">Ambiente, mesa e brinde — em breve, em fotos reais da casa.</p>
+        </div>
+        <h2 id="house-title">O JS ganha rosto quando a casa está cheia.</h2>
+
+        <div class="photo-wall" aria-label="Galeria de fotos do JS Gastrobar">
+          <figure class="photo-slot photo-slot-wide" data-photo-slot="fachada">
+            <div class="photo-placeholder">
+              <span>Ambiente</span>
+              <strong>O lugar onde o encontro começa</strong>
+              <small>JS Gastrobar • Grande Colorado</small>
+            </div>
+          </figure>
+          <figure class="photo-slot photo-slot-tall" data-photo-slot="prato">
+            <img
+              class="photo-image"
+              src="js-gastrobar-petiscos-01.jpeg"
+              onerror="var t=this,l=['js-gastrobar-petiscos-01.jpeg.jpeg','js-gastrobar-petiscos-01.jpg','js-gastrobar-petiscos-01.jpg.jpg'];var i=+(t.dataset.i||0);if(i<l.length){t.dataset.i=i+1;t.src=l[i];}else{t.onerror=null;}"
+              alt="Porção de frango frito com batatas fritas, alface e molho no JS Gastrobar"
+              loading="lazy"
+            />
+            <figcaption class="photo-caption">
+              <span>Na mesa</span>
+              <strong>O sabor em primeiro plano</strong>
+              <small>Petiscos da casa • JS Gastrobar</small>
+            </figcaption>
+          </figure>
+          <figure class="photo-slot photo-slot-square" data-photo-slot="brinde">
+            <img
+              class="photo-image"
+              src="js-gastrobar-drink-01.jpeg"
+              onerror="var t=this,l=['js-gastrobar-drink-01.jpeg.jpeg','js-gastrobar-drink-01.jpg','js-gastrobar-drink-01.jpg.jpg'];var i=+(t.dataset.i||0);if(i<l.length){t.dataset.i=i+1;t.src=l[i];}else{t.onerror=null;}"
+              alt="Drink cítrico servido com gelo, laranja e guarda-sol no balcão do JS Gastrobar"
+              loading="lazy"
+            />
+            <figcaption class="photo-caption">
+              <span>Para brindar</span>
+              <strong>Quando a conversa pede mais uma rodada</strong>
+              <small>Drink da casa • JS Gastrobar</small>
+            </figcaption>
+          </figure>
+          <figure class="photo-slot photo-slot-note">
+            <div class="photo-placeholder photo-placeholder-logo">
+              <img src="logo-js-gastrobar.png" alt="" />
+              <strong>Fotos verdadeiras.<br />Experiência verdadeira.</strong>
+              <small>Em breve, a casa em imagens reais.</small>
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <section id="cardapio" class="menu-section" aria-labelledby="menu-title">
+        <div class="menu-panel section-shell">
+          <div class="section-kicker section-kicker-light"><span>Prato</span><p>O que vai à mesa</p></div>
+          <div class="menu-heading">
+          <h2 id="menu-title">Os sabores que fazem<br /><em>a conversa continuar.</em></h2>
+          <p>
+              O cardápio oficial será apresentado aqui em breve, com fotos e destaques confirmados pela casa.
+            </p>
+          </div>
+
+          <div class="menu-showcase" aria-label="Destaques do cardápio preparados para atualização">
+            <article class="dish-card dish-card-featured">
+              <p class="dish-type">Destaque da casa</p>
+              <h3>Prato oficial em breve</h3>
+              <p>O primeiro destaque do cardápio será incluído quando a casa enviar as informações oficiais.</p>
+              <span class="dish-rule"></span>
+              <small>Cardápio em atualização</small>
+            </article>
+            <article class="dish-card">
+              <p class="dish-type">Para compartilhar</p>
+              <h3>Seleção em breve</h3>
+              <p>Os itens para compartilhar entram aqui com descrição e foto oficial.</p>
+              <span class="dish-rule"></span>
+              <small>Cardápio em atualização</small>
+            </article>
+            <article class="dish-card dish-card-accent">
+              <p class="dish-type">Para brindar</p>
+              <h3>Seleção em breve</h3>
+              <p>As bebidas e os destaques da casa entram neste espaço após confirmação.</p>
+              <span class="dish-rule"></span>
+              <small>Cardápio em atualização</small>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="social-proof section-shell" aria-labelledby="proof-title">
+        <div class="proof-stamp" aria-hidden="true"><span>BOA MESA</span><strong>JS</strong><span>BOA HISTÓRIA</span></div>
+        <div class="proof-content">
+          <div class="section-kicker"><span>Gente</span><p>O que fica na memória</p></div>
+          <h2 id="proof-title">Quem vem ao JS<br /><em>quer voltar.</em></h2>
+          <p>
+            A casa já recebeu duas avaliações públicas no Google. Também reunimos avaliações recebidas pelo Instagram para ampliar a divulgação da casa.
+          </p>
+          <div class="review-grid" aria-label="Avaliações e destaques do JS Gastrobar">
+            <article class="review-card review-card-google">
+              <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+              <blockquote>“O melhor bar e restaurante da região. O atendimento é excelente e muito atencioso. A comida é deliciosa. João e Amélia, os proprietários, são um casal fantástico!”</blockquote>
+              <cite>Jéssica Jota</cite>
+              <small class="review-source">Avaliação pública no Google • 5 estrelas</small>
+            </article>
+            <article class="review-card review-card-google">
+              <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+              <blockquote>5 estrelas atribuídas ao JS Gastro Bar, sem comentário escrito.</blockquote>
+              <cite>Vitória Melo</cite>
+              <small class="review-source">Avaliação pública no Google • 5 estrelas</small>
+            </article>
+            <article class="review-card review-card-suggested">
+              <div class="review-stars" aria-label="Destaque complementar">★★★★★</div>
+              <blockquote>“Excelente local, muito bom. Ambiente familiar e comida muito boa.”</blockquote>
+              <cite>Destaque para divulgação</cite>
+              <small class="review-source">Avaliação recebida pelo Instagram</small>
+            </article>
+            <article class="review-card review-card-suggested">
+              <div class="review-stars" aria-label="Destaque complementar">★★★★★</div>
+              <blockquote>“Ambiente agradável, atendimento acolhedor e petiscos caprichados. Um ótimo lugar para reunir a família.”</blockquote>
+              <cite>Destaque para divulgação</cite>
+              <small class="review-source">Avaliação recebida pelo Instagram</small>
+            </article>
+            <article class="review-card review-card-suggested">
+              <div class="review-stars" aria-label="Destaque complementar">★★★★★</div>
+              <blockquote>“Comida saborosa, bebidas bem preparadas e uma noite muito agradável. Vale a visita!”</blockquote>
+              <cite>Destaque para divulgação</cite>
+              <small class="review-source">Avaliação recebida pelo Instagram</small>
+            </article>
+            <article class="review-card review-card-suggested">
+              <div class="review-stars" aria-label="Destaque complementar">★★★★★</div>
+              <blockquote>“Lugar descontraído, comida gostosa e clima perfeito para conversar e brindar.”</blockquote>
+              <cite>Destaque para divulgação</cite>
+              <small class="review-source">Avaliação recebida pelo Instagram</small>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="encontre" class="location section-shell" aria-labelledby="location-title">
+        <div class="location-map" aria-hidden="true">
+          <div class="map-grid"></div>
+          <div class="route route-one"></div>
+          <div class="route route-two"></div>
+          <div class="map-pin"><span></span><b>JS</b></div>
+          <p class="map-label map-label-top">Grande Colorado</p>
+          <p class="map-label map-label-bottom">Subida do Taquari</p>
+          <p class="map-disclaimer">Subida do Taquari • Grande Colorado</p>
+        </div>
+        <div class="location-copy">
+          <div class="section-kicker"><span>Rota</span><p>Seu caminho até o JS</p></div>
+          <h2 id="location-title">A subida do Taquari<br />é o caminho.<br /><em>O JS é a parada.</em></h2>
+          <p>
+            O JS Gastrobar fica na subida do Taquari, no Grande Colorado, em Brasília.
+          </p>
+          <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Subida+do+Taquari%2C+Grande+Colorado%2C+Bras%C3%ADlia+-+DF" target="_blank" rel="noopener">Abrir rota no Google Maps <span aria-hidden="true">↗</span></a>
+          <small id="route-note">Endereço de referência: SPMN - Lago Norte, Brasília - DF.</small>
+        </div>
+      </section>
+
+      <section id="contato" class="contact section-shell" aria-labelledby="contact-title">
+        <div class="contact-banner">
+          <p class="contact-overline">A próxima mesa pode ser a sua</p>
+          <h2 id="contact-title">Fale com o JS.<br /><em>Marque o encontro.</em></h2>
+          <p class="contact-intro">Reserve sua mesa, tire dúvidas e acompanhe as novidades do JS Gastrobar.</p>
+          <a class="button button-cream" href="https://wa.me/556194056335" target="_blank" rel="noopener">Falar no WhatsApp <span aria-hidden="true">→</span></a>
+          <p class="contact-helper">Atendimento pelo WhatsApp: +55 61 9405-6335.</p>
+        </div>
+        <div id="canais-oficiais" class="contact-details">
+          <div class="contact-row">
+            <span>WhatsApp</span>
+            <strong><a href="https://wa.me/556194056335" target="_blank" rel="noopener">+55 61 9405-6335</a></strong>
+          </div>
+          <div class="contact-row">
+            <span>Telefone</span>
+            <strong><a href="tel:+556194056335">+55 61 9405-6335</a></strong>
+          </div>
+          <div class="contact-row">
+            <span>Endereço</span>
+            <strong>Subida do Taquari, Grande Colorado<br /><small>SPMN - Lago Norte, Brasília - DF</small></strong>
+          </div>
+          <div class="contact-row">
+            <span>Horários</span>
+            <strong>Domingo e sábado: 13:00 às 02:00<br />Segunda a sexta: 16:00 às 02:00</strong>
+          </div>
+          <div class="contact-row">
+            <span>Instagram</span>
+            <strong><a href="https://www.instagram.com/jsgastrobar/" target="_blank" rel="noopener">@jsgastrobar</a></strong>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="logo-js-gastrobar.png" alt="Logo JS Gastrobar" />
+        <p>JS Gastrobar<br />Subida do Taquari • Grande Colorado</p>
+      </div>
+      <nav class="footer-nav" aria-label="Navegação no rodapé">
+        <a href="#experiencia">A experiência</a>
+        <a href="#galeria">A casa</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <p class="footer-note">© <span data-year></span> JS Gastrobar. Feito para ser encontrado e lembrado.</p>
+    </footer>
+
+    <script>
+const menuToggle = document.querySelector('[data-menu-toggle]');
+const menuLabel = document.querySelector('[data-menu-label]');
+const nav = document.querySelector('[data-nav]');
+const navLinks = document.querySelectorAll('[data-nav] a');
+const header = document.querySelector('[data-header]');
+const mobileQuery = window.matchMedia('(max-width: 700px)');
+
+function setMenuState(isOpen) {
+  if (!menuToggle || !nav) return;
+
+  const shouldOpen = mobileQuery.matches && isOpen;
+  menuToggle.setAttribute('aria-expanded', String(shouldOpen));
+  nav.classList.toggle('is-open', shouldOpen);
+  nav.inert = mobileQuery.matches && !shouldOpen;
+  nav.setAttribute('aria-hidden', String(mobileQuery.matches && !shouldOpen));
+  document.body.classList.toggle('menu-open', shouldOpen);
+
+  if (menuLabel) {
+    menuLabel.textContent = shouldOpen ? 'Fechar menu' : 'Abrir menu';
+  }
+}
+
+menuToggle?.addEventListener('click', () => {
+  const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+  setMenuState(!isOpen);
+});
+
+navLinks.forEach((link) => {
+  link.addEventListener('click', () => setMenuState(false));
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') setMenuState(false);
+});
+
+mobileQuery.addEventListener('change', () => setMenuState(false));
+setMenuState(false);
+
+window.addEventListener('scroll', () => {
+  header?.classList.toggle('is-scrolled', window.scrollY > 24);
+}, { passive: true });
+
+const yearTarget = document.querySelector('[data-year]');
+if (yearTarget) yearTarget.textContent = new Date().getFullYear();
+
+</script>
+  </body>
+</html>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#120d0c" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="JS Gastrobar, gastrobar na subida do Taquari no Grande Colorado: sabor, brinde e encontros para ficar na memória."
+    />
     <meta
       name="keywords"
       content="JS Gastrobar, gastrobar Grande Colorado, Taquari Grande Colorado, restaurante Grande Colorado, bar no Grande Colorado"
